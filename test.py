@@ -1,0 +1,12 @@
+# คำสั่งแสดงผลบนหน้าจอ
+print("Hello Pythons")
+print("สวัสดีเจ้าไพทอน")
+print(2+3)
+print(2**8)
+print(2**99999)
+print(sum(range(1,10)))
+print("Hello\n"*8)
+print("Today", "is", "Monday")
+print("Myname is"+"Samit")
+print("Line 1", end="***")
+print("Line 2", end="")
