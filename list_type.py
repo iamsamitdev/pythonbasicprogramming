@@ -16,19 +16,12 @@ print(profile[-2])
 for p in persons_name:
     print(p)
 
-sum_data = 0
-for n in numbers:
-    sum_data += n
-
+sum_data = sum(numbers)
 print(sum_data)
 
 # การสร้าง list แบบว่าง
-product_name = []
+product_name = ["Apple", "Mango", "Grape"]
 
-# การเพิ่มสมาชิกเข้าไปใน list ว่าง
-product_name.append("Apple")
-product_name.append("Mango")
-product_name.append("Grape")
 print(product_name)
 
 # การเปลี่ยนข้อมูลสมาชิก

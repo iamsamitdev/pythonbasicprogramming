@@ -3,8 +3,7 @@ from tkinter import ttk
 import sqlite3
 
 def con_db():
-    conn = sqlite3.connect('db/companydb.db')
-    return conn
+    return sqlite3.connect('db/companydb.db')
 
 
 # ฟังก์ชันให้แสดงผลข้อมูลจากตาราง teachers

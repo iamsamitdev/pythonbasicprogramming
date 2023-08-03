@@ -25,7 +25,7 @@ for k, v in numbers.items():
 for v in numbers.values():
     print(v)
 
-for k in numbers.keys():
+for k in numbers:
     print(k)
 
 # การเพิ่มค่าใหม่เข้าไปใน dictionary

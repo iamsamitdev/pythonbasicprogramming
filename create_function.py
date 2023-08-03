@@ -10,18 +10,12 @@ def sayhello(name):
 
 # ฟังก์ชันแบบมีการ Return ค่า
 def area(width, height):
-    c = width * height
-    return c
+    return width * height
 
 
 # ฟังก์ชันที่มีค่าเริ่มต้นของ Argument
 def show_info(name="", salary=0, lang=""):
-    # print("Name :", name)
-    # print("Salary: ", salary)
-    # print("Lang: ", lang)
-    # print("----")
-    info = [name, salary, lang]
-    return info
+    return [name, salary, lang]
 
 
 # เรียกใช้งานฟังก์ชัน (Call function)
