@@ -1,5 +1,5 @@
-numbers = {1, 5, 7, 12, -10, 7, 5}
-names = {"Samit","Wichai","Apiwat", "Wichai"}
+numbers = {1, 12, -10, 7, 5}
+names = {"Samit", "Apiwat", "Wichai"}
 
 #  ตัวแปรแบบ set จะไม่ดึงสมาชิกที่ซ้ำออกมา
 print(numbers)

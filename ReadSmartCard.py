@@ -128,12 +128,9 @@ print("Using:", reader)
 connection = reader.createConnection()
 connection.connect()
 atr = connection.getATR()
-print("ATR: " + toHexString(atr))
-if (atr[0] == 0x3B & atr[1] == 0x67):
-	req = [0x00, 0xc0, 0x00, 0x01]
-else :
-	req = [0x00, 0xc0, 0x00, 0x00]
-
+print(f"ATR: {toHexString(atr)}")
+req = ([0x00, 0xC0, 0x00, 0x01] if
+       (atr[0] == 0x3B & atr[1] == 0x67) else [0x00, 0xC0, 0x00, 0x00])
 # Check card
 data, sw1, sw2 = connection.transmit(SELECT + THAI_CARD)
 print("Select Applet: %02X %02X" % (sw1, sw2))
@@ -141,39 +138,39 @@ print("Select Applet: %02X %02X" % (sw1, sw2))
 # CID
 data = getData(CMD_CID, req)
 cid = thai2unicode(data[0])
-print("CID: " + cid)
+print(f"CID: {cid}")
 
 # TH Fullname
 data = getData(CMD_THFULLNAME, req)
-print("TH Fullname: " + thai2unicode(data[0]))
+print(f"TH Fullname: {thai2unicode(data[0])}")
 
 # EN Fullname
 data = getData(CMD_ENFULLNAME, req)
-print("EN Fullname: " + thai2unicode(data[0]))
+print(f"EN Fullname: {thai2unicode(data[0])}")
 
 # Date of birth
 data = getData(CMD_BIRTH, req)
-print("Date of birth: " + thai2unicode(data[0]))
+print(f"Date of birth: {thai2unicode(data[0])}")
 
 # Gender
 data = getData(CMD_GENDER, req)
-print("Gender: " + thai2unicode(data[0]))
+print(f"Gender: {thai2unicode(data[0])}")
 
 # Card Issuer
 data = getData(CMD_ISSUER, req)
-print("Card Issuer: " + thai2unicode(data[0]))
+print(f"Card Issuer: {thai2unicode(data[0])}")
 
 # Issue Date
 data = getData(CMD_ISSUE, req)
-print("Issue Date: " + thai2unicode(data[0]))
+print(f"Issue Date: {thai2unicode(data[0])}")
 
 # Expire Date
 data = getData(CMD_EXPIRE, req)
-print("Expire Date: " + thai2unicode(data[0]))
+print(f"Expire Date: {thai2unicode(data[0])}")
 
 # Address
 data = getData(CMD_ADDRESS, req)
-print("Address: " + thai2unicode(data[0]))
+print(f"Address: {thai2unicode(data[0])}")
 
 # PHOTO
 photo = getData(CMD_PHOTO1, req)[0]
@@ -197,7 +194,7 @@ photo += getData(CMD_PHOTO18, req)[0]
 photo += getData(CMD_PHOTO19, req)[0]
 photo += getData(CMD_PHOTO20, req)[0]
 data = HexListToBinString(photo)
-f = open(cid + ".jpg", "wb")
+f = open(f"{cid}.jpg", "wb")
 f.write(data.encode('utf-8'))
 f.close
 

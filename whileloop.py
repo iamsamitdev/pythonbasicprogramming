@@ -4,12 +4,11 @@ n = 1
 while n <= 500:
     if n == 201:
         break
+    if n % 10 == 0:
+        print("%03d" % n)
     else:
-        if n % 10 == 0:
-            print("%03d" % n)
-        else:
-            print("%03d" % n, end=" ")
-        n = n + 1
+        print("%03d" % n, end=" ")
+    n += 1
 
 # Infinity Loop
 while True:
